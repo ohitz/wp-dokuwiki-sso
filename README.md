@@ -1,7 +1,7 @@
 wp-dokuwiki-sso
 ===============
 
-This plugin allows users which log in to Wordpress to be logged into DokuWiki
+This plugin allows users which log in to WordPress to be logged into DokuWiki
 at the same time. When a user logs in, the plugin sets a cookie which is then
 checked with a DokuWiki auth plugin.
 
@@ -25,7 +25,7 @@ Installation
 1. Install a DokuWiki instance on the desired site.
 
 2. Copy the "wp-dokuwiki-sso" folder into the wp-content/plugins/
-   folder of your wordpress installation.
+   folder of your WordPress installation.
 
 3. Configure the plugin using the "Settings / DokuWiki SSO" function
    in the backend. You need to provide the following details:
@@ -37,7 +37,7 @@ Installation
      (e.g. "http://my-website.com/dokuwiki/")
 
    - Shared Secret: A secret shared between the DokuWiki auth plugin
-     and wordpress (e.g. "VeRy-SeCuRe-SeCrEt")
+     and WordPress (e.g. "VeRy-SeCuRe-SeCrEt")
 
 4. Copy the "authwpsso" folder into lib/plugins/ of your DokuWiki
    installation.
@@ -47,9 +47,9 @@ Installation
 
         $conf["authtype"] = 'authwpsso;
         $conf["superuser"] = '@administrator';
-        $conf["auth"]["wordpress"]["timeout"] = 30*60;
-        $conf["auth"]["wordpress"]["secret"] = "VeRy-SeCuRe-SeCrEt"
-        $conf["auth"]["wordpress"]["login"] = "http://my-website.com/wp-login.php";
+        $conf["auth"]["wpsso"]["timeout"] = 30*60;
+        $conf["auth"]["wpsso"]["secret"] = "VeRy-SeCuRe-SeCrEt"
+        $conf["auth"]["wpsso"]["login"] = "http://my-website.com/wp-login.php";
 
    The "timeout" setting defines how long user stays logged into
    DokuWiki by default.
