@@ -1,0 +1,7 @@
+base   authwpsso
+author Oliver Hitz
+email  oliver@net-track.ch
+date   2016-03-22
+name   Single sign on into DokuWiki using Wordpress
+url    https://github.com/ohitz/wp-dokuwiki-sso
+desc   Transparently login to dokuwiki when already logged into wordpress.
