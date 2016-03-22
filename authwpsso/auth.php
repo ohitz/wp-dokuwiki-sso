@@ -19,21 +19,6 @@ if(!defined('DOKU_INC')) die();
  */
 
 class auth_plugin_authwpsso extends DokuWiki_Auth_Plugin {
-  protected $cando = array(
-    'addUser' => false,
-    'delUser' => false,
-    'modLogin' => false,
-    'modPass' => false,
-    'modName' => false,
-    'modMail' => false,
-    'modGroups' => false,
-    'getUsers' => false,
-    'getUserCount' => false,
-    'getGroups' => false,
-    'external' => true,
-    'logout' => false
-  );
-
   protected $config = array();
   
   public function __construct() {
@@ -56,6 +41,7 @@ class auth_plugin_authwpsso extends DokuWiki_Auth_Plugin {
     }
 
     $this->cando['external'] = true;
+    $this->cando['logout'] = false;
   }
 
   function redirectLogin()
