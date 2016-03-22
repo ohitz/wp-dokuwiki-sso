@@ -48,7 +48,7 @@ class auth_plugin_authwpsso extends DokuWiki_Auth_Plugin {
   {
     if (isset($this->config["login"])) {
       // Redirect to a login URL
-      header("Location: ".$this->cnf["login"]);
+      header("Location: ".$this->config["login"]);
       exit(0);
     }
   }
@@ -62,6 +62,7 @@ class auth_plugin_authwpsso extends DokuWiki_Auth_Plugin {
       $cookie = explode("!", $_COOKIE[$this->config["cookie"]]);
       
       if (count($cookie) != 4) {
+        $this->redirectLogin();
         return false;
       }
 
