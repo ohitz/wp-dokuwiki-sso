@@ -195,7 +195,9 @@ class wp_dokuwiki_sso_class
       $tokens = join(":", $roles);
       $digest = md5($_SERVER["REMOTE_ADDR"].$timestamp.$this->options['secret'].$user_name.$tokens);
       setcookie($this->cookie,
-                "$digest!$timestamp!$user_name!$tokens");
+                "$digest!$timestamp!$user_name!$tokens",
+                0,
+                "/");
     } else {
       setcookie($this->cookie, '');
     }
