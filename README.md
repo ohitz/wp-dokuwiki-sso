@@ -47,12 +47,12 @@ Installation
 
         $conf["authtype"] = 'authwpsso;
         $conf["superuser"] = '@administrator';
-        $conf["auth"]["wpsso"]["timeout"] = 30*60;
+        $conf["auth"]["wpsso"]["timeout"] = 1800;
         $conf["auth"]["wpsso"]["secret"] = "VeRy-SeCuRe-SeCrEt"
         $conf["auth"]["wpsso"]["login"] = "http://my-website.com/wp-login.php";
 
    The "timeout" setting defines how long user stays logged into
-   DokuWiki by default.
+   DokuWiki by default (30 minutes * 60 seconds = 1800 seconds).
 
 License
 -------
